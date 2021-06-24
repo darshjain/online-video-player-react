@@ -6,7 +6,7 @@ import SearchBar from './components/search_bar'
 import VideoList from './components/video_list'
 import VideoDetail from './components/video_details'
 
-const API_KEY = 'AIzaSyCEgOwFPp-Ij_6alAJ4u-NafQ1ktFQgn0s'
+// const API_KEY = 'AIzaSyCEgOwFPp-Ij_6alAJ4u-NafQ1ktFQgn0s'
 console.log(process.env);
 class App extends Component {
   constructor(props) {
@@ -17,7 +17,7 @@ class App extends Component {
   }
 
   videoSearch(term) {
-    YtSearch({ key: API_KEY, term: term }, (videos) => {
+    YtSearch({ key: process.env.API_KEY, term: term }, (videos) => {
       this.setState({ videos: videos, selectedVideo: videos[0] })
     })
   }
