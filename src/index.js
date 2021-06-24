@@ -7,13 +7,13 @@ import VideoList from './components/video_list'
 import VideoDetail from './components/video_details'
 
 const API_KEY = 'AIzaSyCEgOwFPp-Ij_6alAJ4u-NafQ1ktFQgn0s'
-
+console.log(process.env);
 class App extends Component {
   constructor(props) {
     super(props)
-
     this.state = { selectedVideo: null, videos: [] }
     this.videoSearch('surfboards')
+    
   }
 
   videoSearch(term) {
