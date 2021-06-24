@@ -1,3 +1,5 @@
+const dotenv = require('dotenv').config({path: __dirname + '/.env'});
+const webpack = require('webpack');
 module.exports = {
   entry: ['./src/index.js'],
   output: {
@@ -26,5 +28,10 @@ module.exports = {
       aggregateTimeout: 300,
       poll: 1000
     }
-  }
+  },
+  plugins: [
+  	new webpack.DefinePlugin({
+  		"process.env": JSON.stringify(dotenv.parsed)
+  	}),
+  ]
 };
